@@ -4,7 +4,7 @@ from pathlib import Path
 def main():
     """Creates a symlink to all the `code` and `Pantograph.java` in all the subdirectories that have a pde file"""
     
-    root_dir = Path(__file__).parent
+    root_dir = Path(__file__).parent.absolute()
     for pde_file in root_dir.glob("*/*.pde"):
         sketch_root = pde_file.parent
         print("Found pde file: {}".format(pde_file.relative_to(root_dir)))
